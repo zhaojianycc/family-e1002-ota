@@ -8,7 +8,7 @@ This repository hosts **anonymous application firmware only**, signed version ma
 - Required layout: dual 2MB OTA slots, SPIFFS at 0x410000 (dual2m-spiffs410000-v1).
 - A one-time USB partition migration is required for the original single-slot firmware. Do not upload a factory image using the OTA path.
 - Firmware verifies TLS, an RSA-2048/SHA256 signed manifest, size and image SHA256 before switching slots. It retains on-device rules.
-- v1.2.0 is a built candidate. Real-device OTA, interrupted download, startup rollback and battery endurance have not yet been validated.
+- v1.2.1 is a built candidate. Real-device OTA, interrupted download, startup rollback and battery endurance have not yet been validated.
 
 The publishing computer keeps the private signing key locally. A published release does **not** confirm that a particular device installed it. No private telemetry is collected here.
 
