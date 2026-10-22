@@ -1,15 +1,11 @@
-# Family E1002 signed OTA releases
+# Family E1002 OTA
 
-This repository hosts **anonymous application firmware only**, signed version manifests and third-party notices. It does not contain household schedules, Wi-Fi credentials, diagnostics, signing private keys, or full device backups.
+Current version: **v1.2.4**, release sequence 1002004.
 
-- Manifest: https://raw.githubusercontent.com/zhaojianycc/family-e1002-ota/main/latest.json
-- Firmware: GitHub Releases (candidate / prerelease).
-- Hardware: reTerminal E1002, 800x480, ESP32-S3.
-- Required layout: dual 2MB OTA slots, SPIFFS at 0x410000 (dual2m-spiffs410000-v1).
-- A one-time USB partition migration is required for the original single-slot firmware. Do not upload a factory image using the OTA path.
-- Firmware verifies TLS, an RSA-2048/SHA256 signed manifest, size and image SHA256 before switching slots. It retains on-device rules.
-- v1.2.1 is a built candidate. Real-device OTA, interrupted download, startup rollback and battery endurance have not yet been validated.
+Signed anonymous application distribution for reTerminal E1002. Existing household rules and Wi-Fi stay on the device. This repository contains no private rules, credentials, device logs or signing private key.
 
-The publishing computer keeps the private signing key locally. A published release does **not** confirm that a particular device installed it. No private telemetry is collected here.
+The device reads `contents/latest.json` through the GitHub API (raw URL is a fallback), validates HTTPS and RSA-2048/SHA-256 signed metadata, then checks model, partition layout, sequence, size and complete binary SHA-256. Versioned application binaries are in `firmware/`; downloads support bounded HTTP Range resume. Requires the dual-2MB application layout; factory images must not overwrite existing user configuration.
 
-Portions of this software are copyright (c) The FreeType Project (www.freetype.org). All rights reserved. See release third-party-notices.zip. Arduino-ESP32 source/license: https://github.com/espressif/arduino-esp32/tree/2.0.17
+On 2026-10-22, actual hardware downloaded v1.2.4, resumed a broken transfer with HTTP 206, validated all 1,250,336 bytes and booted app1. ADC voltage and a 60-second deep-sleep TIMER wake were observed; scheduling returned to 00:05 Asia/Shanghai. Automatic failure rollback, overnight operation, sleep current and endurance remain unverified. Voltage percentage is an uncalibrated estimate. Production OTA minimum voltage is 3.70V.
+
+Normal devices wake daily near 00:05, synchronize time, check for updates, refresh and sleep. GPIO3 wakes local management. There is no always-on remote diagnostic channel. A laptop publishes signed artifacts; the device fetches them at its next online window.
