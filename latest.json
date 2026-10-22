@@ -1,0 +1,4 @@
+{
+  "payload": "{\"schema\":1,\"model\":\"E1002\",\"layout\":\"dual2m-spiffs410000-v1\",\"version\":\"1.2.0\",\"sequence\":1002000,\"size\":1246464,\"sha256\":\"41e9f18836ecdd432471ab2b49965d50f8f1b7bfb3e2b5e38b16bc99baf6bae8\",\"url\":\"https://github.com/zhaojianycc/family-e1002-ota/releases/download/v1.2.0/family-e1002-1.2.0.bin\"}",
+  "signature": "cf5f7f8658c06440157862e6e48187a6cbdf99cd5b8fb38610996da55adf098d1429e3c420b424f828f23037be2dc9a01bdcce222fd3e9ece368a3370d5d1312062ab3f26abb7d10ba0feb71c8417208dda4d54fd77bc50e55cc99b9e4f3c4de058120d48a55fef0827613e601cb846a6d13de7ae9f55ebd49eda656f4c6e9a050dca34ca5eb1e6ad7eec90fb36032da8f48f7c086554ec452330148978fd0487a9bbb1c6cd00445ba8c6f56a041453abbd7918622837e37ba66f73bf9fef12d96dbaac14bec8dcce8b8976734f8c34e66270685164c2d01aa403118e6287aaadece21d3688c6d62c9be03c96423a7a8eef2843dd3c066eb76b330137f38c098"
+}
