@@ -1,6 +1,8 @@
 # Family E1002 OTA
 
-Current version: **v1.2.4**, release sequence 1002004.
+Current version: **v1.2.5**, release sequence 1002005.
+
+v1.2.5 adds optional per-weekday school arrival/dismissal reminder captions, cancellation suppression and local management previews. Existing device rules remain unchanged by OTA; private rule edits must be saved separately through local management after upgrade. v1.2.5 has host and preview validation; hardware results below refer to v1.2.4.
 
 Signed anonymous application distribution for reTerminal E1002. Existing household rules and Wi-Fi stay on the device. This repository contains no private rules, credentials, device logs or signing private key.
 
